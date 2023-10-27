@@ -1,9 +1,10 @@
 <?php
 
-    $conexion = new mysqli('localhost','root','','visitasjesuitas');
+    require_once("../../configdb.php");
     $ip = $_POST["ip"];
     $lugar = $_POST["lugar"];
     $descripcion = $_POST["descripcion"];
+    //CONSULTA PARA MODIFICAR EL LUGAR
     $consulta = "UPDATE lugar SET lugar='$lugar', descripcion='$descripcion' WHERE ip = '$ip'";
     echo $consulta;
     $resultado = $conexion->query($consulta);

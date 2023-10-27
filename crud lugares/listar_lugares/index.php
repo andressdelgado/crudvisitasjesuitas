@@ -7,12 +7,14 @@
     <body>
         <h1>Lista de Lugares</h1>
         <?php
-            $conexion = new mysqli('localhost', 'root', '', 'visitasjesuitas');
+            require_once("../../configdb.php");
+            //CONSULTA PARA SACAR TODAS LAS FILAS DE LUGARES
             $consulta = "SELECT * FROM lugar";
             $resultado = $conexion->query($consulta);
             if ($resultado->num_rows > 0) {
-
-                echo "<table>";            
+                echo "<table>";
+                /*LOS VALORES DE LA CONSULTA SE GUARDAN EN UN ARRAY ASOCIATIVO, 
+                Y MIENTRAS HAYA FILAS, SE GENERARÁ UNA FILA DE UNA TABLA CON LA IP, EL LUGAR, Y LA DESCRIPCION, CADA UNA EN SU RESPECTIVA CELDA    */       
                 while ($fila = $resultado->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td>" . $fila['ip'] . "</td>";
