@@ -20,6 +20,8 @@
                     echo "<td>" . $fila['ip'] . "</td>";
                     echo "<td>" . $fila['lugar'] . "</td>";
                     echo "<td>" . $fila['descripcion'] . "</td>";
+                    echo "<td><a href='../modificar_lugares/index.php?ip=" . $fila['ip'] . "'>Editar</a>";
+                    echo "<td><a href='../eliminar_lugares/index.php?ip=" . $fila['ip'] . "'>Borrar</a>";
                     echo "</tr>";
                 }
                 echo "</table>";
